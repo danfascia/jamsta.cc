@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rubik:700&display=swap');
+
+.lora { font-family: Lora, Georgia, 'Times New Roman', Times, serif; }
+.rubik { font-family: Rubik, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif; }
+@import url('prism-duotone-dark.css');
+
+/* Debug utility sticks yellow border around downstream elements */
+.debug * {@apply border border-yellow-500} 
+
+/* Tailwind @apply directives will be processed by PostCSS after the SASS rendering takes place */
+
+h1,h2 { @apply font-black mt-4; color: #393349; }
+h3 { @apply font-bold mt-4 }
+
+h1.logo {
+  text-shadow: #3142a1 0.364964px 0.364964px 0px, #232f91 1.36496px 1.36496px 0px, #3142a1 2.36496px 2.36496px 0px, #3142a1 3.36496px 3.36496px 0px, #3142a1 4.36496px 4.36496px 0px, #3142a1 5.36496px 5.36496px 0px, #3142a1 6.36496px 6.36496px 0px, #3142a1 7.36496px 7.36496px 0px, #3142a1 8.36496px 8.36496px 0px, #3142a1 9.36496px 9.36496px 0px, #3142a1 10.365px 10.365px 0px, #3142a1 11.365px 11.365px 0px, #3142a1 12.365px 12.365px 0px, #3142a1 13.365px 13.365px 0px, #3142a1 14.365px 14.365px 0px, #3142a1 15.365px 15.365px 0px, #3142a1 16.365px 16.365px 0px, #3142a1 17.365px 17.365px 0px, #3142a1 18.365px 18.365px 0px, #3142a1 19.365px 19.365px 0px, #3142a1 20.365px 20.365px 0px, #3142a1 21.365px 21.365px 0px, #3142a1 22.365px 22.365px 0px, #3142a1 23.365px 23.365px 0px, #3142a1 24.365px 24.365px 0px, #3142a1 25.365px 25.365px 0px, #3142a1 26.365px 26.365px 0px, #3142a1 27.365px 27.365px 0px, #3142a1 28.365px 28.365px 0px, #3142a1 29.365px 29.365px 0px, #3142a1 30.365px 30.365px 0px, #3142a1 31.365px 31.365px 0px, #3142a1 32.365px 32.365px 0px, #3142a1 33.365px 33.365px 0px, #3142a1 34.365px 34.365px 0px, #3142a1 35.365px 35.365px 0px, #3142a1 36.365px 36.365px 0px, #3142a1 37.365px 37.365px 0px, #3142a1 38.365px 38.365px 0px, #3142a1 39.365px 39.365px 0px, #3142a1 40.365px 40.365px 0px, #3142a1 41.365px 41.365px 0px, #3142a1 42.365px 42.365px 0px, #3142a1 43.365px 43.365px 0px, #3142a1 44.365px 44.365px 0px, #3142a1 45.365px 45.365px 0px, #3142a1 46.365px 46.365px 0px, #3142a1 47.365px 47.365px 0px, #3142a1 48.365px 48.365px 0px, #3142a1 49.365px 49.365px 0px, #3142a1 50.365px 50.365px 0px, #3142a1 51.365px 51.365px 0px, #3142a1 52.365px 52.365px 0px, #3142a1 53.365px 53.365px 0px, #3142a1 54.365px 54.365px 0px, #3142a1 55.365px 55.365px 0px, #3142a1 56.365px 56.365px 0px, #3142a1 57.365px 57.365px 0px, #3142a1 58.365px 58.365px 0px, #3142a1 59.365px 59.365px 0px, #3142a1 60.365px 60.365px 0px, #3142a1 61.365px 61.365px 0px, #3142a1 62.365px 62.365px 0px, #3142a1 63.365px 63.365px 0px, #3142a1 64.365px 64.365px 0px, #3142a1 65.365px 65.365px 0px, #3142a1 66.365px 66.365px 0px, #3142a1 67.365px 67.365px 0px, #3142a1 68.365px 68.365px 0px, #3142a1 69.365px 69.365px 0px;
+}
+
+#logo:hover .jam {
+  fill: "#00FF22"
+}
+  
+  main h1 { @apply mb-2 text-2xl; font-family: 'Lora', Georgia, times, serif; }
+  main h2 { @apply px-4 mt-12 mb-2 text-xl ; font-family: 'Lora', Georgia, times, serif;}
+  main h3 { @apply px-4 mt-12 mb-2 text-lg ; font-family: 'Lora', Georgia, times, serif;}
+  
+  main { @apply text-lg }
+  #content p:first-of-type { @apply lora font-normal text-lg max-w-4xl text-gray-800 }
+  #main p { @apply text-gray-700 max-w-3xl mb-8 px-4}
+  #content p { @apply mb-8 px-4 }
+
+  main ul { @apply leading-loose ml-2 }
+  #content ul {@apply list-disc}
+  #content ul > li {@apply ml-8}
+
+  main a { transition: all .25s ease }
+  main a:hover { transition: all .25s ease }
+
+  a.link, #content a { @apply text-indigo-600 border-b-2 border-indigo-400 px-1 }
+  a.link:hover, #content a:hover { @apply text-indigo-700 bg-indigo-200 border-transparent }
+
+  main img { width: 100vw; }
+
+  main em {
+    text-shadow: 
+      -3px 0px 3px yellow,
+       3px 0px 3px yellow,
+       6px 0px 6px yellow,
+      -6px 0px 6px yellow;
+  }
+
+@media (min-width: 768px) {
+  main h1 { @apply text-3xl; }
+  main h2 { @apply text-2xl ;}
+  main h3 { @apply text-xl ; }
+  
+  #content p:first-of-type { @apply lora text-2xl }
+  
+}
+@media (min-width: 1024px) {
+  main h1 { @apply text-5xl; }
+  main h2 { @apply text-3xl ;}
+  main h3 { @apply text-2xl ;}
+
+  #content p { @apply text-xl }
+  #content p:first-of-type { @apply lora text-3xl }
+}
+
+pre { @apply rounded p-4 max-w-4xl overflow-auto }
+code { @apply mt-4 mb-8 bg-gray-300 p-1 rounded text-pink-600 }
+
+.t::before { content: "#"}
+
+
+/* Aspect ratios from Tachyons */
+
+.aspect-ratio--16x9 {
+  padding-bottom: 56.25%;
+}
+
+.aspect-ratio--4x3 {
+  padding-bottom: 75%;
+}
+
+.aspect-ratio--1x1 {
+  padding-bottom: 100%;
+}

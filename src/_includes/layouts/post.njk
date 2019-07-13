@@ -1,0 +1,78 @@
+---
+excludedTags: ["post", "recipe"]
+---
+
+{% extends "./layouts/base.njk" %}
+
+{% block bgBody %} bg-black-05 {% endblock %}
+
+{% block main %}
+<main class="max-w-5xl mx-auto leading-normal">
+    
+    <section id="post-header" class="px-4 mt-8 lg:mt-12">
+        
+        <h1>{{title}}</h1>
+        
+        <div id="post_meta" class="my-4 max-w-4xl text-base font-bold text-indigo-600 flex items-end">
+            <span>{{date | readableDate }}</span>
+            <span class="ml-3 lg:ml-4">—</span>
+            <span class="ml-3 lg:ml-4"><a href="#author" class="link px-1">{{siteData.authors[author].label}}</a></span>
+            <span class="ml-1">・</span>
+            <span class="ml-1 flex items-center">
+                <svg class="w-4 mr-2" viewBox="0 0 32 32" style="fill:currentcolor"><title>clock icon</title><path d="M16 0 A16 16 0 0 0 0 16 A16 16 0 0 0 16 32 A16 16 0 0 0 32 16 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 28 16 A12 12 0 0 1 16 28 A12 12 0 0 1 4 16 A12 12 0 0 1 16 4 M14 6 L14 17.25 L22 22 L24.25 18.5 L18 14.75 L18 6z"></path></svg>
+                {{ content | readingTime }}
+            </span>
+        </div>
+
+        <!-- tags -->
+        <div id="post_tags" class="mt-2 mb-12 max-w-4xl flex items-center">
+            {% if tags %}
+            <nav class="text-base">
+                {% for tag in tags %}
+                    {% if tag not in  excludedTags %}
+                    <a href="/tag/{{tag}}/" class="t rounded-sm px-2 py-1 bg-indigo-100 hover:bg-indigo-200 text-indigo-600 hover:text-indigo-800">{{tag}}</a>
+                    {% endif %}
+                {% endfor %}
+            </nav>
+            {% endif %}
+        </div>
+        <!---->
+    </section>
+    
+    <section id="content" role="main" class="w-full mx-auto">
+        
+        {% if featured_image %}
+        <div class="aspect-ratio-21/9 mt-4 mb-8 mx-auto" style="background: url('{{featured_image}}') "></div>
+        {% endif %}
+
+        <div class="max-w-4xl mx-auto">
+            {{content | safe }}
+        </div>
+
+    </section>
+
+    <!---Author--->
+    <section id="author" class="max-w-4xl bg-gray-100 mx-auto px-4 py-3 my-16 border-2 rounded border-indigo-400 shadow-lg">
+        <a name="author"></a>
+        <div class="max-w-4xl mx-auto flex items-center">
+       
+            <img class="w-32 rounded-full border-8 border-indigo-500 " src="{{siteData.authors[author].avatar}}" alt="{{siteData.authors[author].label}}">
+
+            <div class="ml-2 py-4">
+                <span class="inline-block px-4 uppercase text-gray-600 text-xs tracking-wider font-semibold">Author</span>
+                <span class="flex items-center pb-2">
+                    <h2 class="text-xl lg:text-2xl my-0">{{siteData.authors[author].label}}</h2>
+                    <a href="https://twitter.com/{{siteData.authors[author].twitter}}"><svg class=" w-6 ml-4 text-blue-500 hover:text-indigo-600" data-icon="twitter" viewBox="0 0 32 32" style="fill:currentcolor"><title>twitter icon</title><path d="M2 4 C6 8 10 12 15 11 A6 6 0 0 1 22 4 A6 6 0 0 1 26 6 A8 8 0 0 0 31 4 A8 8 0 0 1 28 8 A8 8 0 0 0 32 7 A8 8 0 0 1 28 11 A18 18 0 0 1 10 30 A18 18 0 0 1 0 27 A12 12 0 0 0 8 24 A8 8 0 0 1 3 20 A8 8 0 0 0 6 19.5 A8 8 0 0 1 0 12 A8 8 0 0 0 3 13 A8 8 0 0 1 2 4"></path></svg></>
+                </span>
+                <p class="text-sm lg:text-lg px-4">
+                    {{siteData.authors[author].description}}
+                </p>
+            </div>
+
+        </div>
+    </section>
+    <!------>
+
+
+</main>
+{% endblock %}

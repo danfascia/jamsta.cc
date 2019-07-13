@@ -1,0 +1,22 @@
+{
+  "name": "JAMstack recipes",
+  "description" : "JAMstack dabblings in the world of static site generators, markdown, APIs and microservices.",
+  "baseURL" : "https://jamsta.cc",
+  
+  "Navigation" :  {
+                    "about" : { "url" : "/about/" },
+                    "recipes" : { "url" : "/" }
+  },
+
+  "authors" : {
+    "danfascia" : { 
+      "label" : "Daniel Fascia",
+      "avatar" : "https://en.gravatar.com/userimage/55563/28f3137c877c3333b164aa0e7aec6861.jpg?size=200",
+      "description" : "Doctor - Front end developer - JAMstack enthusiast since 1998 (first time round). I enjoy solving problems with modern web tooling and APIs",
+      "twitter" : "@danfascia"
+    },
+    "philhawksworth" : { 
+      "label" : "Phil Hawksworth"}
+}
+
+}

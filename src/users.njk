@@ -1,0 +1,17 @@
+{% extends "layouts/base.njk" %}
+
+{% block bgBody %} bg-gray-300 {% endblock %}
+
+{% block main%}
+    <div class="max-w-4xl mx-auto ">
+        <ol>
+        {% for user in users %}
+        <li class="p-3 bg-white-80 hover:bg-white hover:shadow-lg rounded border-2 border-gray-400 my-2">
+            <span class="block uppercase text-gray-500 text-xs ml-1 font-bold tracking-wide">{{user.username}}</span>
+            <span class="block text-xl font-bold p-1">{{user.name}}</span>
+            <span class="block ml-2 text-blue-600">{{user.email}}</span>
+        </li>
+        {% endfor %}
+        </ol>
+    </div>
+{% endblock %}
