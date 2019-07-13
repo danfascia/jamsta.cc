@@ -1,0 +1,15 @@
+<header>
+        <div class="max-w-6xl mx-auto px-2 pb-2">
+            
+            <a href="/">
+                <h1 class="logo mb-2 text-yellow-400 text-2xl md:text-4xl xl:text-5xl">J<span class="rubik">AM</span> <span class="text-white rubik">RECIPES</span></h1>
+            </a>
+    
+            <nav class="ml-auto text-white mt-4 text-lg lg:text-xl mx-1">
+                {% for obj, item in siteData.Navigation %}
+                    <a href="{{item.url | permalink}}" class="px-3 py-2 rounded-lg hover:bg-indigo-800">{{obj | capitalize }}</a>
+                {% endfor %}
+            </nav>
+        
+        </div>
+    </header>
